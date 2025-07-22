@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "create-storybook": "^9.0.17"
+  },
+  "_npx": {
+    "packages": [
+      "create-storybook@latest"
+    ]
+  }
+}

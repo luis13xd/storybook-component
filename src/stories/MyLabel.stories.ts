@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { MyLabel } from "../components/MyLabel";
 
-const meta = {
+const meta:Meta = {
     title: 'MyLabel',
     component: MyLabel,
     tags: ['autodocs'],

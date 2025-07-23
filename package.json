@@ -1,20 +1,45 @@
 {
-  "name": "03-storybook",
-  "private": true,
-  "version": "0.0.0",
+  "name": "custom-component-storybook-fh",
+  "private": false,
+  "version": "0.1.0",
   "type": "module",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "keywords": [
+    "react",
+    "dev",
+    "curso-fh",
+    "luis-trujillo"
+  ],
+  "license": "MIT",
+  "homepage": "https://luis-trujillo-lopez-web.netlify.app/",
+  "repository": {
+    "url": "",
+    "type": "git"
+  },
+  "files": [
+    "dist/"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
   "scripts": {
     "dev": "npm run storybook",
-    "build": "tsc -b && vite build",
+    "build": "npm run clean && tsc && npm run copyfiles",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_03430ebb61446a2"
-  },
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "chromatic": "npx chromatic --project-token=chpt_03430ebb61446a2",
+    "clean": "rimraf dist/",
+    "copyfiles": "copyfiles -u 1 src/**/*.css dist/"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.1",
@@ -30,12 +55,16 @@
     "@vitest/browser": "^3.2.4",
     "@vitest/coverage-v8": "^3.2.4",
     "chromatic": "^13.1.2",
+    "copyfiles": "^2.4.1",
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "eslint-plugin-storybook": "^9.0.17",
     "globals": "^16.0.0",
     "playwright": "^1.54.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "rimraf": "^6.0.1",
     "storybook": "^9.0.17",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
